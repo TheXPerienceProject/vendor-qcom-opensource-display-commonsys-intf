@@ -1,4 +1,5 @@
 LOCAL_PATH := $(call my-dir)
+ifeq ($(TARGET_USES_COMMONSYS_DISPLAY_LIBRARY), true)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE                  := libdisplayconfig
@@ -14,3 +15,4 @@ ifeq ($(LLVM_SA), true)
 endif
 
 include $(BUILD_SHARED_LIBRARY)
+endif
