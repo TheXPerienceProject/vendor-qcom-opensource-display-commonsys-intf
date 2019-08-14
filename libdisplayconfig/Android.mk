@@ -6,6 +6,9 @@ LOCAL_MODULE                  := libdisplayconfig
 LOCAL_MODULE_TAGS             := optional
 LOCAL_HEADER_LIBRARIES        := display_headers
 LOCAL_SRC_FILES               := DisplayConfig.cpp
+LOCAL_CFLAGS                  := -Wno-sign-conversion
+LOCAL_CFLAGS                  += -DLOG_TAG=\"libdisplayconfig\"
+LOCAL_CFLAGS                  += -DDISPLAY_CONFIG_1_4
 LOCAL_SHARED_LIBRARIES        := libhidlbase libhidltransport libutils \
                                  vendor.display.config@1.0 vendor.display.config@1.4
 LOCAL_EXPORT_C_INCLUDE_DIRS   := $(LOCAL_PATH)
