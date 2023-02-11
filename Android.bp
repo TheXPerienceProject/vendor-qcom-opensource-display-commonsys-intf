@@ -7,4 +7,8 @@ cc_library_headers {
         "libqdmetadata",
         "services",
     ],
+    cflags: [
+        "-Wno-sign-conversion",
+        "-Wno-shorten-64-to-32",
+    ],
 }
