@@ -1,6 +1,13 @@
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
+ *//**
+ * @file ConstraintType.aidl
+ * @brief Enum for the ConstraintType.
+ *
+ * This enum defines different categories or types of allocation constraints.
+ * These types help in applying specific alignment rules based on the intended
+ * usage of a buffer (e.g., CPU, display, video).
  */
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
@@ -20,12 +27,14 @@
 // with such a backward incompatible change, it has a high risk of breaking
 // later when a module using the interface is updated, e.g., Mainline modules.
 
-package vendor.qti.hardware.display.composer3;
-@VintfStability
-parcelable QtiLayerCommand {
-  long layer;
-  vendor.qti.hardware.display.composer3.QtiLayerType qtiLayerType;
-  vendor.qti.hardware.display.composer3.QtiLayerFlags qtiLayerFlags;
-  @nullable vendor.qti.hardware.display.composer3.QtiPrivacyRegion[] qtiPrivacyRegions;
-  @nullable vendor.qti.hardware.display.composer3.QtiCornerRadius qtiCornerRadius;
+package vendor.qti.hardware.display.snapallocext;
+@Backing(type="int") @VintfStability
+enum ConstraintType {
+  DEFAULT_ALIGNMENT = 1,
+  CPU_ALIGNMENT = 2,
+  DISPLAY_ALIGNEMNT = 3,
+  VIDEO_ALIGNMENT = 4,
+  GRAPHIC_ALIGNMENT = 5,
+  CAMERA_ALIGNMENT = 6,
+  UBWC_ALIGNMENT = 7,
 }

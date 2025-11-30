@@ -1,6 +1,11 @@
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
+ *//**
+ * @file Scanline.aidl
+ * @brief Union representing scanline information for a buffer plane.
+ *
+ * This union holds explicit scanline value or scanline alignment for a plane.
  */
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
@@ -20,12 +25,9 @@
 // with such a backward incompatible change, it has a high risk of breaking
 // later when a module using the interface is updated, e.g., Mainline modules.
 
-package vendor.qti.hardware.display.composer3;
+package vendor.qti.hardware.display.snapallocext;
 @VintfStability
-parcelable QtiLayerCommand {
-  long layer;
-  vendor.qti.hardware.display.composer3.QtiLayerType qtiLayerType;
-  vendor.qti.hardware.display.composer3.QtiLayerFlags qtiLayerFlags;
-  @nullable vendor.qti.hardware.display.composer3.QtiPrivacyRegion[] qtiPrivacyRegions;
-  @nullable vendor.qti.hardware.display.composer3.QtiCornerRadius qtiCornerRadius;
+union Scanline {
+  long scanline_value;
+  long scanline_align;
 }

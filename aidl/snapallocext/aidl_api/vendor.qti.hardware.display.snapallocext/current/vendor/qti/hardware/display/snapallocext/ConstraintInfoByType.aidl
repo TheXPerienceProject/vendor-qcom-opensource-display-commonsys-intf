@@ -1,6 +1,11 @@
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
+ *//**
+ * @file ConstraintInfoByType.aidl
+ * @brief Parcelable representing a collection of constraints categorized by type.
+ *
+ * This parcelable groups constraint configurations by type for structured retrieval.
  */
 ///////////////////////////////////////////////////////////////////////////////
 // THIS FILE IS IMMUTABLE. DO NOT EDIT IN ANY CASE.                          //
@@ -20,12 +25,9 @@
 // with such a backward incompatible change, it has a high risk of breaking
 // later when a module using the interface is updated, e.g., Mainline modules.
 
-package vendor.qti.hardware.display.composer3;
+package vendor.qti.hardware.display.snapallocext;
 @VintfStability
-parcelable QtiLayerCommand {
-  long layer;
-  vendor.qti.hardware.display.composer3.QtiLayerType qtiLayerType;
-  vendor.qti.hardware.display.composer3.QtiLayerFlags qtiLayerFlags;
-  @nullable vendor.qti.hardware.display.composer3.QtiPrivacyRegion[] qtiPrivacyRegions;
-  @nullable vendor.qti.hardware.display.composer3.QtiCornerRadius qtiCornerRadius;
+parcelable ConstraintInfoByType {
+  vendor.qti.hardware.display.snapallocext.ConstraintType type;
+  List<vendor.qti.hardware.display.snapallocext.ConstraintInfo> constraintInfo;
 }
